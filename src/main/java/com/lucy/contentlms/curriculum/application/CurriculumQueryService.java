@@ -7,11 +7,13 @@ import com.lucy.contentlms.curriculum.domain.model.Language;
 import com.lucy.contentlms.curriculum.infrastructure.persistence.LessonLevelRepository;
 import com.lucy.contentlms.curriculum.infrastructure.persistence.SourceDocumentRepository;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;
 
 @Service
+@Transactional(readOnly = true)
 public class CurriculumQueryService {
 
     private final LessonLevelRepository lessonLevelRepository;
